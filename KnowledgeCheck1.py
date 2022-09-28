@@ -13,4 +13,5 @@ BigTenTeams = ['Illinois', 'Indiana', 'Iowa', 'Maryland', 'Michigan', 'Michigan 
 
 print(BigTenTeams[11])
 
-#Print a team on the list. Selectee
+#Print a team on the list. Selected 11 which actually prints the ###
+### 12th team on the list ###

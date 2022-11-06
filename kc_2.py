@@ -9,13 +9,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv(r'C:\Users\conkl\OneDrive\Documents\PythonScripts\data_1_checks\assets\KC_2_data.csv')
+df = pd.read_csv(r'C:\Users\conkl\OneDrive\Documents\PythonScripts\data_1_checks\assets\Conklin_KC_2data.csv')
 df.head()
 
 print(df)
 
 plt.plot(df.Game, df.Points_Scored)
+plt.title('Purdue Football Points Scored Per Game')
+plt.xlabel('Game')
+plt.ylabel('Points Scored')
 plt.show()
+
 
 
 

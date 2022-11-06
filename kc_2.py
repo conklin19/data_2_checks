@@ -9,7 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv('https://github.com/conklin19/data_1_checks/blob/main/assets/Conklin_KC_2data.csv')
+df = pd.read_csv('assets/Conklin_KC_2data.csv')
 df.head()
 
 print(df)

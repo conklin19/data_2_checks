@@ -8,6 +8,9 @@ Python Version 3.10.7
 
 Installed latest pip3 through VS Code
 
-Installed Pandas , MatPlotLip, and Pandas
+Installed 
+    pandas 1.5.1
+    matplotlib  3.6.0
+    seaborn 0.12.1 
 
 Code should print the .csv and a plot of the number of points Purdue scored in each game for the 2021 season. 

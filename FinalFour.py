@@ -11,6 +11,5 @@ import seaborn as sns
 
 df = pd.read_csv('assets\KenPomData.csv')
 
-df.head()
 
 print(df)

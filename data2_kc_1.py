@@ -4,12 +4,14 @@
 ## Knowledge Check 1 ##
 
 import requests
+import pandas as pd
+import json
 
 dataUSA = requests.get('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
 
-population = dataUSA.json()['data'][4]['Population']
-print(population)
+df = pd.json_normalize(dataUSA.json()['data'])
 
+print(df)
 
 
 

@@ -6,7 +6,10 @@
 import requests
 
 dataUSA = requests.get('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
-print(dataUSA.json())
+
+population = dataUSA.json()['data'][4]['Population']
+print(population)
+
 
 
 

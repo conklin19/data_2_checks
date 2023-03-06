@@ -17,4 +17,5 @@ dataUSA = requests.get('https://datausa.io/api/data?drilldowns=Nation&measures=P
 
 df = pd.json_normalize(dataUSA.json()['data'])
 
-print(df)
+clean_df = df
+

@@ -23,5 +23,16 @@ clean_df = df
 ### First Clean: Delete redundant column 'ID Year' because we don't need the year twice ###
 clean_df = clean_df.drop(['ID Year'], axis = 1)
 
+print(clean_df)
+
+clean_df['ID Nation'].replace('01000US', '1', inplace=True)
+
+clean_df['Nation'].replace('United States', 'United States of America', inplace=True)
+
+print(clean_df)
+
+
+
+
 
 

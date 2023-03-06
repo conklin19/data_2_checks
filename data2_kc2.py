@@ -17,5 +17,11 @@ dataUSA = requests.get('https://datausa.io/api/data?drilldowns=Nation&measures=P
 
 df = pd.json_normalize(dataUSA.json()['data'])
 
+
 clean_df = df
+
+### First Clean: Delete redundant column 'ID Year' because we don't need the year twice ###
+clean_df = clean_df.drop(['ID Year'], axis = 1)
+
+
 

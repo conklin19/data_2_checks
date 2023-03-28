@@ -31,8 +31,12 @@ df2 = pd.DataFrame(sql_2, columns = ["Year", "Team", "Wins", "Losses", "Coach", 
 ### Remove null values from 2020 (no tournament due to COVID-19) ###
 df = df[df.Year != 2020]  
 
+### Merge df and df2 based on matching Year and Team ###
 df = pd.merge(df,df2, on=['Year','Team'])
 
-print(df)
+### Cleaning: Round KPvalue to one decimal place instead of 2 ###
+df['KPvalue'] = df['KPvalue'].astype(float).round(1)
 
+
+print(df)
 

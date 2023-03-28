@@ -31,6 +31,11 @@ combined = sql.merge(sql_2, left_on= 'Year', right_on='Year')
 
 ### Clean by deleting duplicate/redundant rows ###
 combined.drop(['id_x','id_y', 'Team_y'], axis = 1, inplace = True)
+
+
+### Rename column header ###
+combined.rename(columns = {'Team_x':'Team'}, inplace=True)
+
 print(combined)
 
 

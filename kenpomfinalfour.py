@@ -31,7 +31,7 @@ df2 = pd.DataFrame(sql_2, columns = ["Year", "Team", "Wins", "Losses", "Coach", 
 ### Remove null values from 2020 (no tournament due to COVID-19) ###
 df = df[df.Year != 2020]  
 
-df = pd.merge(df,df2, on=['Year','Team'])
+df = pd.merge(df1,df2, on='Year','Team', how='left')
 
 print(df)
 

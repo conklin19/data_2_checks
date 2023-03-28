@@ -22,7 +22,15 @@ df = pd.DataFrame(sql, columns = ["Year", "Team", "KPrank", "KPvalue", "Conferen
 
 sql_2 = pd.read_sql_query("SELECT * FROM newtable", conn)
 
-df2 = pd.DataFrame(sql_2, columns = ["year", "team", "wins", "losses", "coach", "nickname"])
+df2 = pd.DataFrame(sql_2, columns = ["Year", "Team", "Wins", "Losses", "Coach", "Nickname"])
 print(df2)
+
+### Requirement 2: Clean your data and perform a pandas merge with two data sets ###
+### then calculate some new values based on the new data set ###
+combined = sql.merge(sql_2, left_on= 'Year', right_on='Year')
+
+combined.drop(['id_x','id_y', 'Team_y'], axis = 1, inplace = True)
+print(combined)
+
 
 

@@ -8,6 +8,7 @@
 
 import pandas as pd
 import sqlite3
+import pandasql as ps
 
 ## Requirement 1: Loading Data ###
 ## Set Up A Local Database and read data in with SQLite ##
@@ -23,3 +24,5 @@ sql_2 = pd.read_sql_query("SELECT * FROM newtable", conn)
 
 df2 = pd.DataFrame(sql_2, columns = ["year", "team", "wins", "losses", "coach", "nickname"])
 print(df2)
+
+

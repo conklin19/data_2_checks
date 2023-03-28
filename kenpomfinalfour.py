@@ -36,6 +36,8 @@ combined.drop(['id_x','id_y', 'Team_y'], axis = 1, inplace = True)
 ### Rename column header ###
 combined.rename(columns = {'Team_x':'Team'}, inplace=True)
 
+combined = combined.astype({"KPrank":'int', "Champion":'int'})
+
 print(combined)
 
 

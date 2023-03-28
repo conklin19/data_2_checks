@@ -31,5 +31,7 @@ df2 = pd.DataFrame(sql_2, columns = ["Year", "Team", "Wins", "Losses", "Coach", 
 ### Remove null values from 2020 (no tournament due to COVID-19) ###
 df = df[df.Year != 2020]  
 
-inner_join = pd.merge(left=df, right=df2, left_on="Year", right_on="Year")
-print(inner_join)
+newmerge = pd.concat([df,df2])
+
+print(newmerge)
+

@@ -12,9 +12,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-
-
 pd.set_option('display.max_rows', None)
+
 
 ###  Requirement 4: Best Practices ###
 ###  4.1   Build a custom data dictionary (also in README) ##
@@ -97,6 +96,9 @@ champions = df.loc[df['Champion'] == 1]
 champ_value = sns.lineplot(x= champions['Year'], y= df['KPvalue']).set(title='KenPom Value For Champions By Year')
 champ_wins= sns.relplot(data=champions, x="Year", y="Wins").set(title= 'Wins Per Year for Champion By Year')
 
-kp_pivot = df.pivot_table(index='Year', columns='Team', values='KPValue')
+kp_pivot = df.pivot_table(index='Year', columns='Team', values='KPvalue')
+
+print(kp_pivot)
+
 
 

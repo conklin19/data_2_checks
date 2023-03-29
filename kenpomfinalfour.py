@@ -4,10 +4,14 @@
 ### January 2023 ###
 
 ## Final Project ###
-## Advanced KenPom College Basketball Analytics ###
+## KenPom College Basketball Analytics ###
 
 import pandas as pd
 import sqlite3
+import seaborn as sns 
+import matplotlib.pyplot as plt
+
+
 pd.set_option('display.max_rows', None)
 
 ## Requirement 1: Loading Data ###
@@ -42,10 +46,10 @@ df['KPvalue'] = df['KPvalue'].astype(float).round(1)
 new_columns = ['Year', 'Team', 'Nickname', 'KPrank', 'KPvalue', 'Conference', 'Champion', 'Wins', 'Losses', 'Coach']
 
 df = df[new_columns]
+
 ###New Value: Find the Most Losses by a National Champion ###
 most_loss = float(df[['Losses']].max())
 top_team = df.loc[df['Losses'] == most_loss]
-
 print("The National Champion with the most losses is \n")
 print(top_team)
 print("\n")
@@ -61,3 +65,11 @@ mode_coach = (df['Coach'].mode())
 print('The coach with the most Final Four teams is')
 print(mode_coach)
 print('\n')
+
+print(df)
+
+champions = df.loc[df['Champion'] == 1]
+
+sns.lineplot(x= champions['Year'], y= df['KPvalue'])
+plt.show()
+

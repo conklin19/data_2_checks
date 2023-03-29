@@ -12,12 +12,12 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-pd.set_option('display.max_rows', None)
+pd.set_option('display.max_rows', None) ### To see all the rows on my VSCode Output ###
 
 
 ###  Requirement 4: Best Practices ###
 ###  4.1   Build a custom data dictionary (also in README) ##
-
+### Dictionary relates the abbreviations used in the table to the Conference represented ###
 conf_abbrev = {
     "ACC": "Atlantic Coastal",
     "AMR": "American",
@@ -36,16 +36,16 @@ conf_abbrev = {
 ## Requirement 1: Loading Data ###
 ## 1.5  Set Up A Local Database and read data in with SQLite ##
 
-conn = sqlite3.connect("assets/original.db")
+conn = sqlite3.connect("assets/original.db") ## Connects to the database I created in DB Browser ##
 c = conn.cursor()
 
-sql = pd.read_sql_query("SELECT * FROM kenpom", conn)
+sql = pd.read_sql_query("SELECT * FROM kenpom", conn)  ## Selects the original data from Data 1 Project ##
 
-df = pd.DataFrame(sql, columns = ["Year", "Team", "KPrank", "KPvalue", "Conference", "Champion"])
+df = pd.DataFrame(sql, columns = ["Year", "Team", "KPrank", "KPvalue", "Conference", "Champion"]) ## Converts to pandas dataframe ##
 
-sql_2 = pd.read_sql_query("SELECT * FROM newtable", conn)
+sql_2 = pd.read_sql_query("SELECT * FROM newtable", conn) ## newtable is the new data I have added for this project ###
 
-df2 = pd.DataFrame(sql_2, columns = ["Year", "Team", "Wins", "Losses", "Coach", "Nickname"])
+df2 = pd.DataFrame(sql_2, columns = ["Year", "Team", "Wins", "Losses", "Coach", "Nickname"]) ## Converts to pandas dataframe ##
 
 
 ### Requirement 2: Clean your data and perform a pandas merge with two data sets ###

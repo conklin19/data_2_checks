@@ -10,6 +10,8 @@ import pandas as pd
 import sqlite3
 import seaborn as sns 
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 
 pd.set_option('display.max_rows', None)
@@ -86,10 +88,15 @@ print('\n')
 
 print(df)
 
+
+### Requirement 3 Visualization ###
+### 3.3 Make at least 1 Pandas pivot table and 1 matplotlib/seaborn plot ###
+
 champions = df.loc[df['Champion'] == 1]
 
 champ_value = sns.lineplot(x= champions['Year'], y= df['KPvalue']).set(title='KenPom Value For Champions By Year')
 champ_wins= sns.relplot(data=champions, x="Year", y="Wins").set(title= 'Wins Per Year for Champion By Year')
 
-plt.show()
+kp_pivot = df.pivot_table(index='Year', columns='Team', values='KPValue')
+
 

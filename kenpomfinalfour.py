@@ -14,8 +14,26 @@ import matplotlib.pyplot as plt
 
 pd.set_option('display.max_rows', None)
 
+###  Requirement 4: Best Practices ###
+###  4.1   Build a custom data dictionary (also in README) ##
+
+conf_abbrev = {
+    "ACC": "Atlantic Coastal",
+    "AMR": "American",
+    "B10": "Big 10",
+    "B12": "Big 12",
+    "BGE": "Big East",
+    "COL": "Colonial",
+    "HOR": "Horizon",
+    "MVC": "Missouri Valley",
+    "P12": "Pac 12",
+    "SEC": "Southeastern",
+    "WCC": "West Coast",
+}
+
+
 ## Requirement 1: Loading Data ###
-## Set Up A Local Database and read data in with SQLite ##
+## 1.5  Set Up A Local Database and read data in with SQLite ##
 
 conn = sqlite3.connect("assets/original.db")
 c = conn.cursor()
@@ -70,6 +88,8 @@ print(df)
 
 champions = df.loc[df['Champion'] == 1]
 
-sns.lineplot(x= champions['Year'], y= df['KPvalue'])
+champ_value = sns.lineplot(x= champions['Year'], y= df['KPvalue']).set(title='KenPom Value For Champions By Year')
+champ_wins= sns.relplot(data=champions, x="Year", y="Wins").set(title= 'Wins Per Year for Champion By Year')
+
 plt.show()
 

@@ -1,4 +1,4 @@
-# data_2_checks
+# data_2_finalproject
 knowledge checks for CodeLou
 
 Adam Conklin Code Louisville Data Analytics 2 January 2023 Cohort

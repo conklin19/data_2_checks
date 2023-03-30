@@ -13,7 +13,7 @@ Cleaning Data- Option 1: Clean your data and perform a pandas merge with your tw
 
 Visualize- Option 3: Make at least one pandas pivot table and one matplotlib/seaborn plot (Changed from Option 2 Tableau Dashboard)
 
-Best Practices- Option 3: Build a custom data set (since this is custom data that I built) (Changed from Option 2 - Write 3 unit tests)
+Best Practices- Option 3: Build a custom data dictionary (since this is custom data that I built) (Changed from Option 2 - Write 3 unit tests)
 
 Interpretation- Option 2- Annotate .py file with well-written comments and a README file
 

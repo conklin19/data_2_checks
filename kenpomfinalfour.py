@@ -79,10 +79,16 @@ print('The average wins for all Final Four Teams is')
 print(mean_wins)
 print('\n')
 
-### Find the coach with the most Final Fours (mode of Coach Column) ###
+### New Value: Find the coach with the most Final Fours (mode of Coach Column) ###
 mode_coach = (df['Coach'].mode())
 print('The coach with the most Final Four teams is')
 print(mode_coach)
+print('\n')
+
+## New Value: Find the Mean (average) KP rank of all Final Four teams...should be 7.85###
+mean_rank = df['KPrank'].mean()
+print('The average kenpom rank for all Final Four Teams is') 
+print(mean_rank)
 print('\n')
 
 print(df)
@@ -90,9 +96,8 @@ print(df)
 
 ### Requirement 3 Visualization ###
 ### 3.3 Make at least 1 Pandas pivot table and 1 matplotlib/seaborn plot ###
-
-
 ## Create a line plot of KPvalue of the National Champions By Year ###
+
 champions = df.loc[df['Champion'] == 1] ### Creates x-axis of ONLY the National Champions ###
 
 champ_value = sns.lineplot(x= champions['Year'].astype(int), y= df['KPvalue']).set(title='KenPom Value For National Champions By Year')
@@ -101,7 +106,8 @@ plt.xlim(2002, 2020) ## default X-Axis values were 2002.5 etc for some reason so
 ### Create a Pandas Pivot Table- KPvalue of Final Four Teams By Year ###
 kp_pivot = df.pivot_table(index='Year', columns='Team', values='KPvalue')
 
-print(kp_pivot)
+print(kp_pivot)  ## Print Pivot Table ###
 
-plt.show()
+plt.show()  ## Plot Line Graph ###
 
+### The End ###

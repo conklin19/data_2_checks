@@ -95,8 +95,9 @@ print(df)
 ## Create a line plot of KPvalue of the National Champions By Year ###
 champions = df.loc[df['Champion'] == 1] ### Creates x-axis of ONLY the National Champions ###
 
-champ_value = sns.lineplot(x= champions['Year'].astype(int), y= df['KPvalue']).set(title='KenPom Value For Champions By Year')
-plt.xlim(2002, 2020)
+champ_value = sns.lineplot(x= champions['Year'].astype(int), y= df['KPvalue']).set(title='KenPom Value For National Champions By Year')
+plt.xlim(2002, 2020) ## default X-Axis values were 2002.5 etc for some reason so I changed it ###
+
 ### Create a Pandas Pivot Table- KPvalue of Final Four Teams By Year ###
 kp_pivot = df.pivot_table(index='Year', columns='Team', values='KPvalue')
 

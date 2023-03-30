@@ -30,4 +30,79 @@ Year- 2002 through 2022 (except 2020)
 Team- The School that made the Final Four
 KPrank- The kenpom ranking of the team compared to the rest of the country (Divison 1 only)
 KPvalue- The kenpom rating of the team
-Conference- 
+Conference- The conference the team represents (abbreviated in the database with a dictionary)
+Champion- A '1' in this column indicates the National Champion for that year; a '0' indicates a non-champion
+
+This data is the 'kenpom' dataframe in this project
+___________________________________________________________________________________________________________________________________
+
+In the first project, the data above was in a .csv file. I downloaded DB Browser and created a database for this project. The data above is in a table called 'kenpom'.
+The new data is in a table called 'newtable'. This contains additional information to add to the rows of 'kenpom' as follows
+
+Wins- The team's total wins for the season
+Losses- The team's total losses for the season
+Nickname- The team's school nickname (Official Nickname)
+Coach- The Team's coach. 
+_________________________________________________________________________________________________________________________________________________________________
+
+I manually entered the data into the two tables, 'kenpom', and 'newtable' and then began my code. 
+
+I imported the libraries as follows
+
+import pandas as pd
+import sqlite3
+import seaborn as sns 
+import matplotlib.pyplot as plt
+import numpy as np
+_______________________________________________________________________________________________________________________________________________________
+
+I satisfied requirement 4 by creating a dictionary to relate the conference abbreviations to the conference name as follows
+
+conf_abbrev = {
+    "ACC": "Atlantic Coastal",
+    "AMR": "American",
+    "B10": "Big 10",
+    "B12": "Big 12",
+    "BGE": "Big East",
+    "COL": "Colonial",
+    "HOR": "Horizon",
+    "MVC": "Missouri Valley",
+    "P12": "Pac 12",
+    "SEC": "Southeastern",
+    "WCC": "West Coast",
+}
+____________________________________
+
+Requirement 1: read in data and Requirement 2: Clean Data/Calculate new values
+I then used SQLite to read in the two tables from the database and converted each of the to pandas dataframes. I first cleaned the data by deleting the 2020 records
+because there was no NCAA tournament due to COVID-19. Then, I performed a pandas merge on line 58 using the Year and Team to ensure no additional rows were created.
+I ended up with 80 rows and manually inspected them to ensure the merged dataframe (df) was correct. 
+
+I cleaned the data as follows: (beginning line 54)
+-Removed null 2020 values
+-Rounded KPvalue from two decimals to one decimal place
+-Moved the Nickname Column to follow the team column instead of being out on the end
+
+I calculated new values as follows: (beginning line 69)
+-The most losses by a National Champion (Syracuse 2016)
+-The average wins for a Final Four Team (31)
+-The coach with the most Final Fours (Roy Williams- Kansas/North Carolina)
+-The average kenpom rank for Final Four Teams (7.85)
+
+___________________________________________________________________________________________
+
+Requirement 3: Visualization
+
+Line 101- I created the x-axis list of ONLY the national champions by using pandas loc
+
+I used seaborn/matplotlib to plot the KPvalue of the national champions by year.
+
+I then created a pivot table of all the schools represented but only with the KPvalue of their Final Four Teams. 
+
+__________________________________________________________________________________________________________________________________
+
+
+
+
+
+

@@ -110,4 +110,6 @@ print(kp_pivot)  ## Print Pivot Table ###
 
 plt.show()  ## Plot Line Graph ###
 
+
+## Requirement 5: README is in the Github Repo (kenpomfinalfourREADME) ###
 ### The End ###
